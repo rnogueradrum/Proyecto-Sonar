@@ -17,6 +17,8 @@ public interface HybridCarService {
     List<HybridCar> findByColor(String color);
     
     List<HybridCar> findByBrand(String brand);
+    
+    List<HybridCar> findByDoors(Integer doors);
 
     HybridCar save(HybridCar hybridCar);
 

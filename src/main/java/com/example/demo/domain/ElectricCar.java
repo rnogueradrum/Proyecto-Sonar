@@ -17,8 +17,8 @@ public class ElectricCar extends Car{ //Concreción de la clase abstracta
     public ElectricCar(){} //Constructor vacío
 
     //Constructor de la propiedad específica del vehículos y llamada a constructor (de la clase padre) de las propiedades comunes a todos los vehículos
-    public ElectricCar(Long id, Battery battery, AirConditioner airConditioner, Engine engine, ElectricPiece electricPiece, String brand, String color) {
-        super(id, battery,airConditioner,engine, brand, color);
+    public ElectricCar(Long id, Battery battery, AirConditioner airConditioner, Engine engine, ElectricPiece electricPiece, String brand, String color, Integer doors) {
+        super(id, battery,airConditioner,engine, brand, color, doors);
         this.electricPiece = electricPiece;
 
 

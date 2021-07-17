@@ -19,6 +19,9 @@ public interface ElectricCarService {
     List<ElectricCar> findByColor(String color);
     
     List<ElectricCar> findByBrand(String brand);
+    
+    List<ElectricCar> findByDoors(Integer doors);
+    
 
     ElectricCar save(ElectricCar electricCar);
 

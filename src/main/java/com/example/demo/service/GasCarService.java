@@ -16,6 +16,8 @@ public interface GasCarService {
     List<GasCar> findByColor(String color);
     
     List<GasCar> findByBrand(String brand);
+    
+    List<GasCar> findByDoors(Integer doors);
 
     GasCar save(GasCar gasCar);
 

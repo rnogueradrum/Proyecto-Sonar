@@ -15,8 +15,8 @@ public class GasCar extends Car{
 
     }
 
-    public GasCar(Long id, Battery battery, AirConditioner airConditioner, Engine engine, OilTank oilTank, String brand, String color) {
-        super(id, battery,airConditioner,engine, brand, color);
+    public GasCar(Long id, Battery battery, AirConditioner airConditioner, Engine engine, OilTank oilTank, String brand, String color, Integer doors) {
+        super(id, battery,airConditioner,engine, brand, color, doors);
         this.oilTank = oilTank;
     }
     //Setters y Getters de Subsistemas

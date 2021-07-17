@@ -7,6 +7,7 @@ public abstract class Car {
     private Long id;
     private String brand;
     private String color;
+    private Integer doors;
     
 	private Battery battery;
     private AirConditioner airConditioner;
@@ -19,13 +20,14 @@ public abstract class Car {
     protected Car() {}
 
     //Constructor de las propiedades comunes a todos los vehículos
-    protected Car(Long id, Battery battery, AirConditioner airConditioner, Engine engine, String brand, String color) {
+    protected Car(Long id, Battery battery, AirConditioner airConditioner, Engine engine, String brand, String color, Integer doors) {
         this.id = id;
     	this.battery = battery;
         this.airConditioner = airConditioner;
         this.engine = engine;
         this.brand = brand;
         this.color = color;
+        this.doors = doors;
     }
 
     //Setters y Getters de Subsistemas comunes
@@ -77,12 +79,23 @@ public abstract class Car {
 	public void setColor(String color) {
 		this.color = color;
 	}
+	
+
+	public Integer getDoors() {
+		return doors;
+	}
+
+	public void setDoors(Integer doors) {
+		this.doors = doors;
+	}
 
 	@Override
 	public String toString() {
-		return "Car [id=" + id + ", brand=" + brand + ", color=" + color + ", battery=" + battery + ", airConditioner="
-				+ airConditioner + ", engine=" + engine + "]";
+		return "Car [id=" + id + ", brand=" + brand + ", color=" + color + ", doors=" + doors + ", battery=" + battery
+				+ ", airConditioner=" + airConditioner + ", engine=" + engine + "]";
 	}
+
+	
 
 	
 	

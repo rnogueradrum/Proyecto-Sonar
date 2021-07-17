@@ -12,8 +12,8 @@ public class HybridCar extends Car{
     //2 Constructores
     public HybridCar() {}//Constructor vacío
 
-    public HybridCar(Long id, Battery battery, AirConditioner airConditioner, Engine engine, HybridPiece hybridPiece, String brand, String color) {
-        super(id, battery,airConditioner,engine, brand, color);
+    public HybridCar(Long id, Battery battery, AirConditioner airConditioner, Engine engine, HybridPiece hybridPiece, String brand, String color, Integer doors) {
+        super(id, battery,airConditioner,engine, brand, color, doors);
         this.hybridPiece = hybridPiece;
        
     }

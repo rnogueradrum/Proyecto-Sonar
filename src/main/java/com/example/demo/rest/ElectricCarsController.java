@@ -100,7 +100,7 @@ import com.example.demo.service.GasCarService;
 
 	    /**
 	     * DELETE
-	     * http://localhost:8080/api/gascar
+	     * http://localhost:8080/api/electriccar
 	     */
 	    @DELETE
 	    public Response deleteAll(){
@@ -108,28 +108,52 @@ import com.example.demo.service.GasCarService;
 	        return Response.ok(Response.Status.OK).build();
 	    }
 	    
-//	    @GET
-//	    @Path("/color/{color}")
-//	    public Response findByColor(@PathParam("color") String color){
-//	    	List<ElectricCar> byColor = electricCarService.findByColor(color);
-//	        if (byColor == null)
-//	            return Response.status(Response.Status.NOT_FOUND).build();
-//
-//	        return Response.ok(byColor).build();
-//	    }
+	    /**
+	     * Filtro findByColor
+	     * GET
+	     * http://localhost:8080/api/electriccar/color/Yellow
+	     */
+	    @GET
+	    @Path("color/{color}")
+	    public Response findByColor(@PathParam("color") String color){
 
+	    	List<ElectricCar> byColor = electricCarService.findByColor(color);
+	        if (byColor == null)
+	            return Response.status(Response.Status.NOT_FOUND).build();
+
+	        return Response.ok(byColor).build();
+	    }
+
+	   
+	    /**
+	     * Filtro findByBrand
+	     * GET
+	     * http://localhost:8080/api/electriccar/brand/Honda
+	     */
+	    @GET
+	    @Path("brand/{brand}")
+	    public Response findByBrand(@PathParam("brand") String brand){
+	    	List<ElectricCar> byBrand = electricCarService.findByBrand(brand);
+	        if (byBrand == null)
+	            return Response.status(Response.Status.NOT_FOUND).build();
+
+	        return Response.ok(byBrand).build();
+	    }
 	    
-	    
-//	    @GET
-//	    @Path("{brand}")
-//	    public Response findByBrand(@PathParam("brand") String brand){
-//	    	List<ElectricCar> byBrand = electricCarService.findByColor(brand);
-//	        if (byBrand == null)
-//	            return Response.status(Response.Status.NOT_FOUND).build();
-//
-//	        return Response.ok(byBrand).build();
-//	    }
+	    /**
+	     * Filtro findByDoors
+	     * GET
+	     * http://localhost:8080/api/electriccar/doors/3
+	     */
+	    @GET
+	    @Path("doors/{doors}")
+	    public Response findByDoors(@PathParam("doors") Integer doors){
+	    	List<ElectricCar> byDoors = electricCarService.findByDoors(doors);
+	        if (byDoors == null)
+	            return Response.status(Response.Status.NOT_FOUND).build();
+
+	        return Response.ok(byDoors).build();
+	    }
 		
-
 
 }

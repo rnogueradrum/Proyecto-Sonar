@@ -107,29 +107,52 @@ import com.example.demo.service.GasCarService;
 	        return Response.ok(Response.Status.OK).build();
 	    }
 	    
+	    /**
+	     * Filtro findByColor
+	     * GET
+	     * http://localhost:8080/api/gascar/color/Yellow
+	     */
 	    @GET
 	    @Path("color/{color}")
 	    public Response findByColor(@PathParam("color") String color){
-	    	System.out.println(color);
-	    	return null;
-//	    	List<GasCar> byColor = gasCarService.findByColor(color);
-//	        if (byColor == null)
-//	            return Response.status(Response.Status.NOT_FOUND).build();
-//
-//	        return Response.ok(byColor).build();
+
+	    	List<GasCar> byColor = gasCarService.findByColor(color);
+	        if (byColor == null)
+	            return Response.status(Response.Status.NOT_FOUND).build();
+
+	        return Response.ok(byColor).build();
 	    }
 
 	   
+	    /**
+	     * Filtro findByBrand
+	     * GET
+	     * http://localhost:8080/api/gascar/brand/Honda
+	     */
+	    @GET
+	    @Path("brand/{brand}")
+	    public Response findByBrand(@PathParam("brand") String brand){
+	    	List<GasCar> byBrand = gasCarService.findByBrand(brand);
+	        if (byBrand == null)
+	            return Response.status(Response.Status.NOT_FOUND).build();
+
+	        return Response.ok(byBrand).build();
+	    }
 	    
-//	    @GET
-//	    @Path("{brand}")
-//	    public Response findByBrand(@PathParam("brand") String brand){
-//	    	List<GasCar> byBrand = gasCarService.findByColor(brand);
-//	        if (byBrand == null)
-//	            return Response.status(Response.Status.NOT_FOUND).build();
-//
-//	        return Response.ok(byBrand).build();
-//	    }
+	    /**
+	     * Filtro findByDoors
+	     * GET
+	     * http://localhost:8080/api/gascar/doors/3
+	     */
+	    @GET
+	    @Path("doors/{doors}")
+	    public Response findByDoors(@PathParam("doors") Integer doors){
+	    	List<GasCar> byDoors = gasCarService.findByDoors(doors);
+	        if (byDoors == null)
+	            return Response.status(Response.Status.NOT_FOUND).build();
+
+	        return Response.ok(byDoors).build();
+	    }
 		
 
 }

@@ -8,7 +8,7 @@ import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
-
+import com.example.demo.domain.ElectricCar;
 import com.example.demo.domain.HybridCar;
 import com.example.demo.domain.pieces.AirConditioner;
 import com.example.demo.domain.pieces.Battery;
@@ -33,7 +33,8 @@ public class HybridCarImpl implements HybridCarService {
 				new Engine(),
 				new HybridPiece(),
 				"Toyota",
-				"White");
+				"White",
+				5);
 		
     	HybridCar hybridCar2 = new HybridCar(2L, 
 				new Battery(),
@@ -41,7 +42,8 @@ public class HybridCarImpl implements HybridCarService {
 				new Engine(),
 				new HybridPiece(),
 				"Rolls Royce",
-				"Purple");
+				"Purple",
+				5);
 		
     	HybridCar hybridCar3 = new HybridCar(3L,
     			new Battery(),
@@ -49,9 +51,25 @@ public class HybridCarImpl implements HybridCarService {
 				new Engine(),
 				new HybridPiece(),
 				"BMW",
-				"Ocean Blue");
+				"Ocean Blue",
+				3);
 		
+    	hybridCar1.getBattery().setCharged(true);
+    	hybridCar1.getAirConditioner().airOn();
+    	hybridCar1.getEngine().setIgnition(true);
+    	hybridCar1.getHybridPiece().setHybridPieceCheck(true);
 		
+    	hybridCar2.getBattery().setCharged(true);
+    	hybridCar2.getAirConditioner().airOn();
+    	hybridCar2.getEngine().setIgnition(true);
+    	hybridCar2.getHybridPiece().setHybridPieceCheck(true);
+		
+    	hybridCar3.getBattery().setCharged(true);
+    	hybridCar3.getAirConditioner().airOn();
+    	hybridCar3.getEngine().setIgnition(true);
+    	hybridCar3.getHybridPiece().setHybridPieceCheck(true);
+    	
+    	
 		cars.put(1L, hybridCar1);
 		cars.put(2L, hybridCar2);
 		cars.put(3L, hybridCar3);
@@ -75,16 +93,43 @@ public class HybridCarImpl implements HybridCarService {
 
 	@Override
 	public List<HybridCar> findByColor(String color) {
-		// TODO Auto-generated method stub
-		return null;
+		List<HybridCar> byColor = new ArrayList<HybridCar>();
+		for (Map.Entry<Long, HybridCar> entrada: cars.entrySet()) {
+				
+	          if (entrada.getValue().getColor().equals(color)) {
+	        	 byColor.add(entrada.getValue());
+	        	 
+	          }//if
+	        }//for
+		return byColor;
 	}
 
 	@Override
 	public List<HybridCar> findByBrand(String brand) {
-		// TODO Auto-generated method stub
-		return null;
+		List<HybridCar> byBrand = new ArrayList<HybridCar>();
+		for (Map.Entry<Long, HybridCar> entrada: cars.entrySet()) {
+				
+	          if (entrada.getValue().getBrand().equals(brand)) {
+	        	 byBrand.add(entrada.getValue());
+	        	 
+	          }//if
+	        }//for
+		return byBrand;
 	}
-
+	
+	
+	@Override
+	public List<HybridCar> findByDoors(Integer doors) {
+		List<HybridCar> byDoors = new ArrayList<HybridCar>();
+		for (Map.Entry<Long, HybridCar> entrada: cars.entrySet()) {
+				
+	          if (entrada.getValue().getDoors() == doors) {
+	        	 byDoors.add(entrada.getValue());
+	        	 
+	          }//if
+	        }//for
+		return byDoors;
+	}
 
 	@Override
 	public HybridCar save(HybridCar hybridCar) {

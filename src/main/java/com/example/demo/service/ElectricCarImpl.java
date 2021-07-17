@@ -9,6 +9,7 @@ import java.util.Map;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.domain.ElectricCar;
+import com.example.demo.domain.GasCar;
 import com.example.demo.domain.pieces.AirConditioner;
 import com.example.demo.domain.pieces.Battery;
 import com.example.demo.domain.pieces.ElectricPiece;
@@ -30,7 +31,8 @@ public class ElectricCarImpl implements ElectricCarService {
 				new Engine(),
 				new ElectricPiece(),
 				"Tesla",
-				"Red");
+				"Red",
+				3);
 		
     	ElectricCar electricCar2 = new ElectricCar(2L, 
 				new Battery(),
@@ -38,7 +40,8 @@ public class ElectricCarImpl implements ElectricCarService {
 				new Engine(),
 				new ElectricPiece(),
 				"Mazda",
-				"Black");
+				"Black",
+				3);
 		
     	ElectricCar electricCar3 = new ElectricCar(3L,
     			new Battery(),
@@ -46,10 +49,27 @@ public class ElectricCarImpl implements ElectricCarService {
 				new Engine(),
 				new ElectricPiece(),
 				"Nissan",
-				"Blue Sky");
+				"Blue Sky",
+				5);
 		
 		
-		cars.put(1L, electricCar1);
+    	electricCar1.getBattery().setCharged(true);
+    	electricCar1.getAirConditioner().airOn();
+    	electricCar1.getEngine().setIgnition(true);
+    	electricCar1.getElectricPiece().setElectricPieceCheck(true);
+		
+    	electricCar2.getBattery().setCharged(true);
+    	electricCar2.getAirConditioner().airOn();
+    	electricCar2.getEngine().setIgnition(true);
+    	electricCar2.getElectricPiece().setElectricPieceCheck(true);
+		
+    	electricCar3.getBattery().setCharged(true);
+    	electricCar3.getAirConditioner().airOn();
+    	electricCar3.getEngine().setIgnition(true);
+    	electricCar3.getElectricPiece().setElectricPieceCheck(true);
+    	
+    	
+    	cars.put(1L, electricCar1);
 		cars.put(2L, electricCar2);
 		cars.put(3L, electricCar3);
     }
@@ -72,16 +92,45 @@ public class ElectricCarImpl implements ElectricCarService {
 
 	@Override
 	public List<ElectricCar> findByColor(String color) {
-		// TODO Auto-generated method stub
-		return null;
+		List<ElectricCar> byColor = new ArrayList<ElectricCar>();
+		for (Map.Entry<Long, ElectricCar> entrada: cars.entrySet()) {
+				
+	          if (entrada.getValue().getColor().equals(color)) {
+	        	 byColor.add(entrada.getValue());
+	        	 
+	          }//if
+	        }//for
+		
+		
+		return byColor;
 	}
 
 	@Override
 	public List<ElectricCar> findByBrand(String brand) {
-		// TODO Auto-generated method stub
-		return null;
+		List<ElectricCar> byBrand = new ArrayList<ElectricCar>();
+		for (Map.Entry<Long, ElectricCar> entrada: cars.entrySet()) {
+				
+	          if (entrada.getValue().getBrand().equals(brand)) {
+	        	 byBrand.add(entrada.getValue());
+	        	 
+	          }//if
+	        }//for
+		return byBrand;
 	}
 
+
+	@Override
+	public List<ElectricCar> findByDoors(Integer doors) {
+		List<ElectricCar> byDoors = new ArrayList<ElectricCar>();
+		for (Map.Entry<Long, ElectricCar> entrada: cars.entrySet()) {
+				
+	          if (entrada.getValue().getDoors() == doors) {
+	        	 byDoors.add(entrada.getValue());
+	        	 
+	          }//if
+	        }//for
+		return byDoors;
+	}
 
 	@Override
 	public ElectricCar save(ElectricCar electricCar) {

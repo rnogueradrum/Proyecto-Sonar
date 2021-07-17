@@ -39,6 +39,7 @@ public class CarFacade extends Car {
         Long id;
         String brand;
         String color;
+        Integer doors;
 
         switch (carType) {
             case ELECTRICAR:
@@ -48,9 +49,10 @@ public class CarFacade extends Car {
                 id = 1L;
                 brand = "Tesla";
                 color = "Black";
+                doors = 5;
 
                 //Llama a la construcción del ELECTRICAR
-                return new ElectricCar(id, battery, airConditioner, engine, electricPiece, brand, color);
+                return new ElectricCar(id, battery, airConditioner, engine, electricPiece, brand, color, doors);
 
             case HYBRIDCAR:
                 //Particularidad del HybridCar
@@ -59,9 +61,10 @@ public class CarFacade extends Car {
                 id = 2L;
                 brand = "Toyota";
                 color = "Pearl White";
+                doors = 5;
 
                 //Llama a la construcción de HybridCar
-                return new HybridCar(id, battery,airConditioner,engine,hybridPiece, brand, color);
+                return new HybridCar(id, battery,airConditioner,engine,hybridPiece, brand, color, doors);
 
             case GASCAR:
                 //Particularidad del coche de combustión
@@ -70,8 +73,9 @@ public class CarFacade extends Car {
                 id = 3L;
                 brand = "Honda";
                 color = "Red";
+                doors = 3;
                 //Llama a la construcción de GasCar
-                return new GasCar(id, battery, airConditioner, engine, oilTank, brand, color);
+                return new GasCar(id, battery, airConditioner, engine, oilTank, brand, color, doors);
 
             default: return null;//Por defecto devuelve un electricar. NO ES NECESARIO
         }

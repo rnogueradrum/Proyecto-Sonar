@@ -110,28 +110,54 @@ public class HybridCarsController {
 	        return Response.ok(Response.Status.OK).build();
 	    }
 	    
-//	    @GET
-//	    @Path("{color}")
-//	    public Response findByColor(@PathParam("color") String color){
-//	    	List<HybridCar> byColor = hybridCarService.findByColor(color);
-//	        if (byColor == null)
-//	            return Response.status(Response.Status.NOT_FOUND).build();
-//
-//	        return Response.ok(byColor).build();
-//	    }
+	    /**
+	     * Filtro findByColor
+	     * GET
+	     * http://localhost:8080/api/hybridcar/color/Yellow
+	     */
+	    @GET
+	    @Path("color/{color}")
+	    public Response findByColor(@PathParam("color") String color){
 
+	    	List<HybridCar> byColor = hybridCarService.findByColor(color);
+	        if (byColor == null)
+	            return Response.status(Response.Status.NOT_FOUND).build();
+
+	        return Response.ok(byColor).build();
+	    }
+
+	   
+	    /**
+	     * Filtro findByBrand
+	     * GET
+	     * http://localhost:8080/api/hybridcar/brand/Honda
+	     */
+	    @GET
+	    @Path("brand/{brand}")
+	    public Response findByBrand(@PathParam("brand") String brand){
+	    	List<HybridCar> byBrand = hybridCarService.findByBrand(brand);
+	        if (byBrand == null)
+	            return Response.status(Response.Status.NOT_FOUND).build();
+
+	        return Response.ok(byBrand).build();
+	    }
 	    
-	    
-//	    @GET
-//	    @Path("{brand}")
-//	    public Response findByBrand(@PathParam("brand") String brand){
-//	    	List<hybridCar> byBrand = hybridCarService.findByColor(brand);
-//	        if (byBrand == null)
-//	            return Response.status(Response.Status.NOT_FOUND).build();
-//
-//	        return Response.ok(byBrand).build();
-//	    }
+	    /**
+	     * Filtro findByDoors
+	     * GET
+	     * http://localhost:8080/api/hybridcar/doors/3
+	     */
+	    @GET
+	    @Path("doors/{doors}")
+	    public Response findByDoors(@PathParam("doors") Integer doors){
+	    	List<HybridCar> byDoors = hybridCarService.findByDoors(doors);
+	        if (byDoors == null)
+	            return Response.status(Response.Status.NOT_FOUND).build();
+
+	        return Response.ok(byDoors).build();
+	    }
 		
+
 
 
 

@@ -1,0 +1,755 @@
+{
+	"info": {
+		"_postman_id": "cd71fe80-93d4-4bb4-a325-a54ab3056349",
+		"name": "CARS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Factory-Facade",
+			"item": [
+				{
+					"name": "GET/cars/{carType}GasCar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/cars/GasCar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cars",
+								"GasCar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET/cars/{carType}ElectriCar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/cars/ElectriCar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cars",
+								"ElectriCar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET/cars/{carType}HybridCar",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/cars/HybridCar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cars",
+								"HybridCar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET/cars/{carType}WrongCarType",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/cars/WrongCarType",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cars",
+								"WrongCarType"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GasCar",
+			"item": [
+				{
+					"name": "GET/gascar/ findAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/gascar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"gascar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET/gascar/ findOne",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/gascar/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"gascar",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET/gascar/ findByColor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/gascar/color/Yellow",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"gascar",
+								"color",
+								"Yellow"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET/gascar/ findByBrand",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/gascar/brand/Honda",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"gascar",
+								"brand",
+								"Honda"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET/gascar/ findByDoors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/gascar/doors/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"gascar",
+								"doors",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/gascar create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"brand\": \"SAAB\",\r\n    \"color\": \"Green\",\r\n    \"battery\": {\r\n        \"charged\": true\r\n    },\r\n    \"airConditioner\": {\r\n        \"airSwitch\": true\r\n    },\r\n    \"engine\": {\r\n        \"ignition\": true\r\n    },\r\n    \"oilTank\": {\r\n        \"oilTank\": true\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/gascar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"gascar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/gascar update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"brand\": \"SAAB\",\r\n    \"color\": \"Green\",\r\n    \"battery\": {\r\n        \"charged\": true\r\n    },\r\n    \"airConditioner\": {\r\n        \"airSwitch\": true\r\n    },\r\n    \"engine\": {\r\n        \"ignition\": true\r\n    },\r\n    \"oilTank\": {\r\n        \"oilTank\": true\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/gascar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"gascar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/gascar/1 deleteOne",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/gascar/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"gascar",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/gascar deleteAll",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/gascar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"gascar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ElectricCar",
+			"item": [
+				{
+					"name": "GET/electriccar/ findAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/electriccar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"electriccar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET/electriccar/ findOne",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/electriccar/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"electriccar",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET/electriccar/ findByColor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/electriccar/color/Blue Sky",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"electriccar",
+								"color",
+								"Blue Sky"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET/electriccar/ findByBrand",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/electriccar/brand/Tesla",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"electriccar",
+								"brand",
+								"Tesla"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET/electriccar/ findByDoors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/electriccar/doors/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"electriccar",
+								"doors",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/electriccar create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"brand\": \"Maserati\",\r\n    \"color\": \"Velvet\",\r\n    \"doors\": 6,\r\n    \"battery\": {\r\n        \"charged\": true\r\n    },\r\n    \"airConditioner\": {\r\n        \"airSwitch\": true\r\n    },\r\n    \"engine\": {\r\n        \"ignition\": true\r\n    },\r\n    \"electricPiece\": {\r\n        \"electricPieceCheck\": true\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/electriccar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"electriccar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/electriccar update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"brand\": \"Tesla\",\r\n    \"color\": \"Red Hell\",\r\n    \"doors\": 5,\r\n    \"battery\": {\r\n        \"charged\": true\r\n    },\r\n    \"airConditioner\": {\r\n        \"airSwitch\": true\r\n    },\r\n    \"engine\": {\r\n        \"ignition\": true\r\n    },\r\n    \"electricPiece\": {\r\n        \"electricPieceCheck\": true\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/electriccar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"electriccar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/electriccar/1 deleteOne",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/electriccar/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"electriccar",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/electriccar deleteAll",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/electriccar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"electriccar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "HybridCar",
+			"item": [
+				{
+					"name": "GET/hybridcar/ findAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/hybridcar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"hybridcar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET/hybridcar/ findOne",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/hybridcar/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"hybridcar",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET/hybridcar/ findByColor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/hybridcar/color/Purple",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"hybridcar",
+								"color",
+								"Purple"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET/hybridcar/ findByBrand",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/hybridcar/brand/Rolls Royce",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"hybridcar",
+								"brand",
+								"Rolls Royce"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET/hybridcar/ findByDoors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/hybridcar/doors/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"hybridcar",
+								"doors",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/hybridcar create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"brand\": \"SAAB\",\r\n    \"color\": \"Green\",\r\n    \"battery\": {\r\n        \"charged\": true\r\n    },\r\n    \"airConditioner\": {\r\n        \"airSwitch\": true\r\n    },\r\n    \"engine\": {\r\n        \"ignition\": true\r\n    },\r\n    \"hybridPiece\": {\r\n            \"hybridPieceCheck\": true\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/hybridcar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"hybridcar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/hybridcar update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"brand\": \"SAAB\",\r\n    \"color\": \"Green\",\r\n    \"battery\": {\r\n        \"charged\": true\r\n    },\r\n    \"airConditioner\": {\r\n        \"airSwitch\": true\r\n    },\r\n    \"engine\": {\r\n        \"ignition\": true\r\n    },\r\n    \"hybridPiece\": {\r\n            \"hybridPieceCheck\": true\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/hybridcar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"hybridcar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/hybridcar/1 deleteOne",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/hybridcar/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"hybridcar",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/hybridcar deleteAll",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/hybridcar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"hybridcar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

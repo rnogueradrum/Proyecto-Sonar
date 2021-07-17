@@ -20,10 +20,11 @@ public class GasCarServiceImpl implements GasCarService {
 	
 	/**
 	 * Database emulation
+	 * 
 	 */
     private static final Map<Long, GasCar> cars = new HashMap<>();
 
-    static{ 
+    static{  
 
 		GasCar gasCar1 = new GasCar(1L, 
 				new Battery(),
@@ -31,7 +32,9 @@ public class GasCarServiceImpl implements GasCarService {
 				new Engine(),
 				new OilTank(),
 				"Honda",
-				"Red");
+				"Red",
+				3);
+			
 		
 		GasCar gasCar2 = new GasCar(2L, 
 				new Battery(),
@@ -39,7 +42,8 @@ public class GasCarServiceImpl implements GasCarService {
 				new Engine(),
 				new OilTank(),
 				"Ferrari",
-				"Yellow");
+				"Yellow",
+				3);
 		
 		GasCar gasCar3 = new GasCar(3L, 
 				new Battery(),
@@ -47,8 +51,23 @@ public class GasCarServiceImpl implements GasCarService {
 				new Engine(),
 				new OilTank(),
 				"Aston Martin",
-				"Grey");
+				"Grey",
+				5);
 		
+		gasCar1.getBattery().setCharged(true);
+		gasCar1.getAirConditioner().airOn();
+		gasCar1.getEngine().setIgnition(true);
+		gasCar1.getOilTank().setOilTank(true);
+		
+		gasCar2.getBattery().setCharged(true);
+		gasCar2.getAirConditioner().airOn();
+		gasCar2.getEngine().setIgnition(true);
+		gasCar2.getOilTank().setOilTank(true);
+		
+		gasCar3.getBattery().setCharged(true);
+		gasCar3.getAirConditioner().airOn();
+		gasCar3.getEngine().setIgnition(true);
+		gasCar3.getOilTank().setOilTank(true);
 		
 		cars.put(1L, gasCar1);
 		cars.put(2L, gasCar2);
@@ -89,8 +108,29 @@ public class GasCarServiceImpl implements GasCarService {
 
 	@Override
 	public List<GasCar> findByBrand(String brand) {
-		// TODO Auto-generated method stub
-		return null;
+		List<GasCar> byBrand = new ArrayList<GasCar>();
+		for (Map.Entry<Long, GasCar> entrada: cars.entrySet()) {
+				
+	          if (entrada.getValue().getBrand().equals(brand)) {
+	        	 byBrand.add(entrada.getValue());
+	        	 
+	          }//if
+	        }//for
+		return byBrand;
+	}
+	
+
+	@Override
+	public List<GasCar> findByDoors(Integer doors) {
+		List<GasCar> byDoors = new ArrayList<GasCar>();
+		for (Map.Entry<Long, GasCar> entrada: cars.entrySet()) {
+				
+	          if (entrada.getValue().getDoors() == doors) {
+	        	 byDoors.add(entrada.getValue());
+	        	 
+	          }//if
+	        }//for
+		return byDoors;
 	}
 
 	@Override
