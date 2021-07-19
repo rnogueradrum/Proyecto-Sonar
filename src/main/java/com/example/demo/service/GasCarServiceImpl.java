@@ -76,7 +76,7 @@ public class GasCarServiceImpl implements GasCarService {
     
 	@Override
 	public Integer count() {
-		return cars.keySet().size();
+		return cars.size();
 	}
 
 	@Override
@@ -97,13 +97,9 @@ public class GasCarServiceImpl implements GasCarService {
 				
 	          if (entrada.getValue().getColor().equals(color)) {
 	        	 byColor.add(entrada.getValue());
-	        	 
 	          }//if
 	        }//for
-		
-		
 		return byColor;
-			
 	}
 
 	@Override
