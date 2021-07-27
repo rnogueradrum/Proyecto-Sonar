@@ -121,7 +121,7 @@ public class GasCarServiceImpl implements GasCarService {
 		List<GasCar> byDoors = new ArrayList<GasCar>();
 		for (Map.Entry<Long, GasCar> entrada: cars.entrySet()) {
 				
-	          if (entrada.getValue().getDoors() == doors) {
+	          if (entrada.getValue().getDoors().equals(doors)) {
 	        	 byDoors.add(entrada.getValue());
 	        	 
 	          }//if

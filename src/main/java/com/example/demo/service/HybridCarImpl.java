@@ -123,7 +123,7 @@ public class HybridCarImpl implements HybridCarService {
 		List<HybridCar> byDoors = new ArrayList<HybridCar>();
 		for (Map.Entry<Long, HybridCar> entrada: cars.entrySet()) {
 				
-	          if (entrada.getValue().getDoors() == doors) {
+	          if (entrada.getValue().getDoors().equals(doors)) {
 	        	 byDoors.add(entrada.getValue());
 	        	 
 	          }//if

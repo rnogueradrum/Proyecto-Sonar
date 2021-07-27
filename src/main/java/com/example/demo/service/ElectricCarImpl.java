@@ -124,7 +124,7 @@ public class ElectricCarImpl implements ElectricCarService {
 		List<ElectricCar> byDoors = new ArrayList<ElectricCar>();
 		for (Map.Entry<Long, ElectricCar> entrada: cars.entrySet()) {
 				
-	          if (entrada.getValue().getDoors() == doors) {
+	          if (entrada.getValue().getDoors().equals(doors)) {
 	        	 byDoors.add(entrada.getValue());
 	        	 
 	          }//if
