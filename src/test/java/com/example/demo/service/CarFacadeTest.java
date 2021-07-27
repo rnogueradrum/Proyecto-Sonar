@@ -11,7 +11,7 @@ import com.example.demo.domain.GasCar;
 import com.example.demo.domain.HybridCar;
 import com.example.demo.domain.NoValidCartype;
 
-class CarFacadeTest {
+public class CarFacadeTest {
 	
 	GasCar gasCarDummy = new GasCar();
 	ElectricCar electricCarDummy = new ElectricCar();

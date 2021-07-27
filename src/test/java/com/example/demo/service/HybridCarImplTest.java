@@ -20,7 +20,7 @@ import com.example.demo.domain.pieces.HybridPiece;
 
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-class HybridCarImplTest {
+public class HybridCarImplTest {
 	
 	HybridCarImpl hybridCarImpl; 
 	

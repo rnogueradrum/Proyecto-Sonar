@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
 @RunWith(JUnitPlatform.class)
 @SelectPackages("com.example") 
 @SuiteDisplayName("Suite de testing") 
-class SuiteTest {
+public class SuiteTest {
 
 	/**
 	 * El ejercicio solicita la cobertura de las clases indicadas

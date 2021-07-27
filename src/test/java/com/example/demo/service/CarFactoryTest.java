@@ -17,7 +17,7 @@ import com.example.demo.domain.NoValidCartype;
 
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-class CarFactoryTest {
+public class CarFactoryTest {
 
 	GasCar gasCarDummy = new GasCar();
 	ElectricCar electricCarDummy = new ElectricCar();

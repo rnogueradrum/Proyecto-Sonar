@@ -25,7 +25,7 @@ import com.example.demo.domain.pieces.OilTank;
 
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-class GasCarServiceImplTest {
+public class GasCarServiceImplTest {
 	
 	
 	GasCarServiceImpl gasCarServiceImpl; 

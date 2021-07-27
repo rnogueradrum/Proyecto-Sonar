@@ -18,7 +18,7 @@ import com.example.demo.domain.pieces.Engine;
 import com.example.demo.domain.pieces.ElectricPiece;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-class ElectricCarImplTest {
+public class ElectricCarImplTest {
 	
 	ElectricCarImpl electricCarImpl; 
 	
