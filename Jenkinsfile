@@ -26,10 +26,10 @@ pipeline {
                 }
             }
         }
-//        stage('Sonar') {
-//            steps {
-//                sh 'mvn verify sonar:sonar -Dsonar.projectKey=rnogueradrum_m3-01-maven-RN -Dsonar.organization=rnogueradrum -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=3de65a1c013f5abc7d8b4ab7892c215e05bae05b -Dsonar.branch.name=master'
-//            }
-//        }
+        stage('Sonar') {
+            steps {
+                sh 'mvn verify sonar:sonar -Dsonar.projectKey=rnogueradrum_Jenkins-project -Dsonar.organization=rnogueradrum -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=690eddc9086b05dce5e8515b7f81ce721c99c07f -Dsonar.branch.name=master'
+            }
+        }
     }
 }
