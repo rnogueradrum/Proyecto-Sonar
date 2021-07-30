@@ -76,6 +76,57 @@ public class CarFacadeTest {
 		
 	}
 	
+	@Order(11)
+	@Test
+	@DisplayName("gasCarOff")
+	void gasCarOffTest() throws NoValidCartype {
+		gasCarDummy = (GasCar) CarFacade.carReady("GasCar");
+		gasCarDummy.getBattery().batteryOff();
+		gasCarDummy.getAirConditioner().airOff();
+		gasCarDummy.getEngine().startedOff();
+		gasCarDummy.getOilTank().emptyTank();
+		
+		assertEquals(false ,gasCarDummy.getAirConditioner().getAirSwitch());
+		assertEquals(false ,gasCarDummy.getBattery().getCharged());
+		assertEquals(false ,gasCarDummy.getEngine().getIgnition());
+		assertEquals(false ,gasCarDummy.getOilTank().getGasTank());
+		
+	}
 	
+	@Order(13)
+	@Test
+	@DisplayName("electricCarOff")
+	void electricCarOffTest() throws NoValidCartype {
+		electricCarDummy = (ElectricCar) CarFacade.carReady("ElectriCar");
+		
+		electricCarDummy.getBattery().batteryOff();
+		electricCarDummy.getAirConditioner().airOff();
+		electricCarDummy.getEngine().startedOff();
+		electricCarDummy.getElectricPiece().off();
+		
+		assertEquals(false ,electricCarDummy.getAirConditioner().getAirSwitch());
+		assertEquals(false ,electricCarDummy.getBattery().getCharged());
+		assertEquals(false ,electricCarDummy.getEngine().getIgnition());
+		assertEquals(false ,electricCarDummy.getElectricPiece().getElectricPieceCheck());
+		
+	}
+	
+	@Order(15)
+	@Test
+	@DisplayName("hybridCarOff")
+	void hybridCarOffTest() throws NoValidCartype {
+		hybridCarDummy = (HybridCar) CarFacade.carReady("HybridCar");
+		
+		hybridCarDummy.getBattery().batteryOff();
+		hybridCarDummy.getAirConditioner().airOff();
+		hybridCarDummy.getEngine().startedOff();
+		hybridCarDummy.getHybridPiece().off();
+		
+		assertEquals(false ,hybridCarDummy.getAirConditioner().getAirSwitch());
+		assertEquals(false ,hybridCarDummy.getBattery().getCharged());
+		assertEquals(false ,hybridCarDummy.getEngine().getIgnition());
+		assertEquals(false ,hybridCarDummy.getHybridPiece().getHybridPieceCheck());
+		
+	}
 
 }

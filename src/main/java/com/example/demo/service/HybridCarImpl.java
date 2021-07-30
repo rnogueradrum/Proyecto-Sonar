@@ -150,9 +150,9 @@ public class HybridCarImpl implements HybridCarService {
      * @return
      */
     private Long getMaxCarId() {
-    	if (cars.isEmpty())
+    	if (cars.isEmpty()) {
 			return 0L;
-
+    	}
         return Collections.max(cars.entrySet(),
                 (entry1, entry2) -> (int) (entry1.getKey() - entry2.getKey())
         ).getKey();
