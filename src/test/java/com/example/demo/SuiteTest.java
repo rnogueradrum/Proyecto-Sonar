@@ -15,7 +15,7 @@ public class SuiteTest {
 	/**
 	 * El ejercicio solicita la cobertura de las clases indicadas
 	 * 
-	 * Suite de Test
+	 * Suite Test
 	 * 
 	 * General: (100%)
 	 * 
