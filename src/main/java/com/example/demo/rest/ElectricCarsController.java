@@ -16,9 +16,9 @@ import javax.ws.rs.core.Response;
 import org.springframework.stereotype.Component;
 
 import com.example.demo.domain.ElectricCar;
-import com.example.demo.domain.GasCar;
+
 import com.example.demo.service.ElectricCarService;
-import com.example.demo.service.GasCarService;
+
 
 	@Path("/electriccar")
 	@Component

@@ -15,10 +15,8 @@ import javax.ws.rs.core.Response;
 
 import org.springframework.stereotype.Component;
 
-import com.example.demo.domain.ElectricCar;
+
 import com.example.demo.domain.HybridCar;
-import com.example.demo.service.ElectricCarService;
-import com.example.demo.service.GasCarService;
 import com.example.demo.service.HybridCarService;
 
 

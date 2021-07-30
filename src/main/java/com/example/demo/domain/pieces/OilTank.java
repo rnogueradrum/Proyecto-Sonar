@@ -2,25 +2,25 @@ package com.example.demo.domain.pieces;
 
 public class OilTank {
 
-    private Boolean oilTank;
+    private Boolean gasTank;
 
     public void fullTank() {
-        oilTank=true;
+        gasTank=true;
         System.out.println("Oil Tank is full");
 
     }
 
     public void emptyTank() {
-        oilTank=false;
+        gasTank=false;
         System.out.println("Oil Tank is empty");
     }
 
-    public Boolean getOilTank() {
-        return oilTank;
+    public Boolean getGasTank() {
+        return gasTank;
     }
 
-    public void setOilTank(Boolean oilTank) {
-        this.oilTank = oilTank;
+    public void setGasTank(Boolean oilTank) {
+        this.gasTank = oilTank;
     }
 
 }

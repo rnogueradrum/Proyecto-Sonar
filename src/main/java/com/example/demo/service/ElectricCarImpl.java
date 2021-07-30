@@ -9,7 +9,7 @@ import java.util.Map;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.domain.ElectricCar;
-import com.example.demo.domain.GasCar;
+
 import com.example.demo.domain.pieces.AirConditioner;
 import com.example.demo.domain.pieces.Battery;
 import com.example.demo.domain.pieces.ElectricPiece;
@@ -92,7 +92,7 @@ public class ElectricCarImpl implements ElectricCarService {
 
 	@Override
 	public List<ElectricCar> findByColor(String color) {
-		List<ElectricCar> byColor = new ArrayList<ElectricCar>();
+		List<ElectricCar> byColor = new ArrayList<>();
 		for (Map.Entry<Long, ElectricCar> entrada: cars.entrySet()) {
 				
 	          if (entrada.getValue().getColor().equals(color)) {
@@ -107,7 +107,7 @@ public class ElectricCarImpl implements ElectricCarService {
 
 	@Override
 	public List<ElectricCar> findByBrand(String brand) {
-		List<ElectricCar> byBrand = new ArrayList<ElectricCar>();
+		List<ElectricCar> byBrand = new ArrayList<>();
 		for (Map.Entry<Long, ElectricCar> entrada: cars.entrySet()) {
 				
 	          if (entrada.getValue().getBrand().equals(brand)) {
@@ -121,7 +121,7 @@ public class ElectricCarImpl implements ElectricCarService {
 
 	@Override
 	public List<ElectricCar> findByDoors(Integer doors) {
-		List<ElectricCar> byDoors = new ArrayList<ElectricCar>();
+		List<ElectricCar> byDoors = new ArrayList<>();
 		for (Map.Entry<Long, ElectricCar> entrada: cars.entrySet()) {
 				
 	          if (entrada.getValue().getDoors().equals(doors)) {
@@ -150,14 +150,12 @@ public class ElectricCarImpl implements ElectricCarService {
      * Highest cars Map id
      * @return
      */
-    private Long getMaxCarId() {
-    	if (cars.isEmpty())
+	private Long getMaxCarId() {
+		if (cars.isEmpty()) {
 			return 0L;
-
-        return Collections.max(cars.entrySet(),
-                (entry1, entry2) -> (int) (entry1.getKey() - entry2.getKey())
-        ).getKey();
-    }
+		}
+		return Collections.max(cars.entrySet(), (entry1, entry2) -> (int) (entry1.getKey() - entry2.getKey())).getKey();
+	}
 
 
 	@Override

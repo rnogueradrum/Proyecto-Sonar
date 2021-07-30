@@ -8,7 +8,7 @@ import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
-import com.example.demo.domain.ElectricCar;
+
 import com.example.demo.domain.HybridCar;
 import com.example.demo.domain.pieces.AirConditioner;
 import com.example.demo.domain.pieces.Battery;
@@ -93,7 +93,7 @@ public class HybridCarImpl implements HybridCarService {
 
 	@Override
 	public List<HybridCar> findByColor(String color) {
-		List<HybridCar> byColor = new ArrayList<HybridCar>();
+		List<HybridCar> byColor = new ArrayList<>();
 		for (Map.Entry<Long, HybridCar> entrada: cars.entrySet()) {
 				
 	          if (entrada.getValue().getColor().equals(color)) {
@@ -106,7 +106,7 @@ public class HybridCarImpl implements HybridCarService {
 
 	@Override
 	public List<HybridCar> findByBrand(String brand) {
-		List<HybridCar> byBrand = new ArrayList<HybridCar>();
+		List<HybridCar> byBrand = new ArrayList<>();
 		for (Map.Entry<Long, HybridCar> entrada: cars.entrySet()) {
 				
 	          if (entrada.getValue().getBrand().equals(brand)) {
@@ -120,7 +120,7 @@ public class HybridCarImpl implements HybridCarService {
 	
 	@Override
 	public List<HybridCar> findByDoors(Integer doors) {
-		List<HybridCar> byDoors = new ArrayList<HybridCar>();
+		List<HybridCar> byDoors = new ArrayList<>();
 		for (Map.Entry<Long, HybridCar> entrada: cars.entrySet()) {
 				
 	          if (entrada.getValue().getDoors().equals(doors)) {

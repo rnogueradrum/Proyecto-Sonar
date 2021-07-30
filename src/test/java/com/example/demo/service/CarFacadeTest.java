@@ -35,7 +35,7 @@ public class CarFacadeTest {
 		assertEquals(true ,gasCarDummy.getAirConditioner().getAirSwitch());
 		assertEquals(true ,gasCarDummy.getBattery().getCharged());
 		assertEquals(true ,gasCarDummy.getEngine().getIgnition());
-		assertEquals(true ,gasCarDummy.getOilTank().getOilTank());
+		assertEquals(true ,gasCarDummy.getOilTank().getGasTank());
 		
 	}
 	

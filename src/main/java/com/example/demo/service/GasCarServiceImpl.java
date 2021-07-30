@@ -57,17 +57,17 @@ public class GasCarServiceImpl implements GasCarService {
 		gasCar1.getBattery().setCharged(true);
 		gasCar1.getAirConditioner().airOn();
 		gasCar1.getEngine().setIgnition(true);
-		gasCar1.getOilTank().setOilTank(true);
+		gasCar1.getOilTank().setGasTank(true);
 		
 		gasCar2.getBattery().setCharged(true);
 		gasCar2.getAirConditioner().airOn();
 		gasCar2.getEngine().setIgnition(true);
-		gasCar2.getOilTank().setOilTank(true);
+		gasCar2.getOilTank().setGasTank(true);
 		
 		gasCar3.getBattery().setCharged(true);
 		gasCar3.getAirConditioner().airOn();
 		gasCar3.getEngine().setIgnition(true);
-		gasCar3.getOilTank().setOilTank(true);
+		gasCar3.getOilTank().setGasTank(true);
 		
 		cars.put(1L, gasCar1);
 		cars.put(2L, gasCar2);
@@ -92,7 +92,7 @@ public class GasCarServiceImpl implements GasCarService {
 
 	@Override
 	public List<GasCar> findByColor(String color) {
-		List<GasCar> byColor = new ArrayList<GasCar>();
+		List<GasCar> byColor = new ArrayList<>();
 		for (Map.Entry<Long, GasCar> entrada: cars.entrySet()) {
 				
 	          if (entrada.getValue().getColor().equals(color)) {
@@ -104,7 +104,7 @@ public class GasCarServiceImpl implements GasCarService {
 
 	@Override
 	public List<GasCar> findByBrand(String brand) {
-		List<GasCar> byBrand = new ArrayList<GasCar>();
+		List<GasCar> byBrand = new ArrayList<>();
 		for (Map.Entry<Long, GasCar> entrada: cars.entrySet()) {
 				
 	          if (entrada.getValue().getBrand().equals(brand)) {
@@ -118,7 +118,7 @@ public class GasCarServiceImpl implements GasCarService {
 
 	@Override
 	public List<GasCar> findByDoors(Integer doors) {
-		List<GasCar> byDoors = new ArrayList<GasCar>();
+		List<GasCar> byDoors = new ArrayList<>();
 		for (Map.Entry<Long, GasCar> entrada: cars.entrySet()) {
 				
 	          if (entrada.getValue().getDoors().equals(doors)) {
